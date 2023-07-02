@@ -1,5 +1,5 @@
 import discord, asyncio, datetime, pytz
-import random as ran
+import os
 
 
 class MyClient(discord.Client):
@@ -91,7 +91,8 @@ class MyClient(discord.Client):
             if i is False:
                 await message.channel.send ('{}님의 권한이 부족'.format(message.author.mantion))
 
+token = os.environ["BOT_TOKEN"]
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run('MTEyNDk2NTIzMDg3MTU5NzIwNw.GV557z.3Cz4MDccJF2XH38Zk-YIeMRc3ecVyYYY3MbCKU')
+client.run(token)
